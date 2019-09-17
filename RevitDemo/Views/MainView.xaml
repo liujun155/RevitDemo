@@ -1,0 +1,57 @@
+﻿<basic:BaseUserControl x:Class="RevitDemo.Views.MainView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RevitDemo.Views"
+      xmlns:basic="clr-namespace:BasicProject;assembly=BasicProject"
+      xmlns:aw="clr-namespace:Autodesk.Windows;assembly=AdWindows"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <aw:RibbonControl>
+            <aw:RibbonTab Title="测试">
+                <aw:RibbonPanel>
+                    <aw:RibbonPanelSource Title="测试">
+                        <aw:RibbonButton Text="载入房间" ShowText="True" MinWidth="80" Size="Large"  Orientation="Vertical"
+                                         CommandHandlerBinding="{Binding LoadRoom}" ToolTip="载入房间">
+                            <aw:RibbonButton.Image>
+                                <BitmapImage UriSource="C:\Users\liujun.SEENSUN\Pictures\导入.png"></BitmapImage>
+                            </aw:RibbonButton.Image>
+                            <aw:RibbonButton.LargeImage>
+                                <BitmapImage UriSource="C:\Users\liujun.SEENSUN\Pictures\导入.png"></BitmapImage>
+                            </aw:RibbonButton.LargeImage>
+                        </aw:RibbonButton>
+                        <aw:RibbonButton Text="族文件" ShowText="True" MinWidth="80" Size="Large"  Orientation="Vertical"
+                                         CommandHandlerBinding="{Binding Test}" ToolTip="族文件">
+                            <aw:RibbonButton.Image>
+                                <BitmapImage UriSource="C:\Users\liujun.SEENSUN\Pictures\管理.png"></BitmapImage>
+                            </aw:RibbonButton.Image>
+                            <aw:RibbonButton.LargeImage>
+                                <BitmapImage UriSource="C:\Users\liujun.SEENSUN\Pictures\管理.png"></BitmapImage>
+                            </aw:RibbonButton.LargeImage>
+                        </aw:RibbonButton>
+                        <aw:RibbonButton Text="创建门" ShowText="True" MinWidth="80" Size="Large"  Orientation="Vertical"
+                                         CommandHandlerBinding="{Binding Door}" ToolTip="创建门">
+                            <aw:RibbonButton.Image>
+                                <BitmapImage UriSource="C:\Users\liujun.SEENSUN\Pictures\门.png"></BitmapImage>
+                            </aw:RibbonButton.Image>
+                            <aw:RibbonButton.LargeImage>
+                                <BitmapImage UriSource="C:\Users\liujun.SEENSUN\Pictures\门.png"></BitmapImage>
+                            </aw:RibbonButton.LargeImage>
+                        </aw:RibbonButton>
+                        <aw:RibbonButton Text="连接件" ShowText="True" MinWidth="80" Size="Large"  Orientation="Vertical"
+                                         CommandHandlerBinding="{Binding Connector}" ToolTip="连接件">
+                            <aw:RibbonButton.Image>
+                                <BitmapImage UriSource="C:\Users\liujun.SEENSUN\Pictures\连接.png"></BitmapImage>
+                            </aw:RibbonButton.Image>
+                            <aw:RibbonButton.LargeImage>
+                                <BitmapImage UriSource="C:\Users\liujun.SEENSUN\Pictures\连接.png"></BitmapImage>
+                            </aw:RibbonButton.LargeImage>
+                        </aw:RibbonButton>
+                    </aw:RibbonPanelSource>
+                </aw:RibbonPanel>
+            </aw:RibbonTab>
+        </aw:RibbonControl>
+    </Grid>
+</basic:BaseUserControl>

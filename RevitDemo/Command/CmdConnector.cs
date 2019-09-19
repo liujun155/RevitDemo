@@ -64,23 +64,24 @@ namespace RevitDemo.Command
             {
                 ts1.RollBack();
             }
-            FamilyEnt con = new FamilyEnt()
-            {
-                Id = Guid.NewGuid(),
-                FileName = Path.GetFileNameWithoutExtension(@"E:\Revit二次开发\流出连接件.rfa"),
-                FilePath = @"E:\Revit二次开发\流出连接件.rfa"
-            };
             Transaction ts2 = new Transaction(_doc, "CtCon2");
             try
             {
                 ts2.Start();
-                Family family1 = FindAndLoadFamily(_doc, con);
+                Family family1 = FindAndLoadFamily(_doc, con2);
                 FamilySymbol fSymbol1 = FindFamilySymbolByFamily(_doc, family1);
-                FamilyInstance fi = _doc.Create.NewFamilyInstance(new XYZ(200, 200, 200), fSymbol1, Autodesk.Revit.DB.Structure.StructuralType.NonStructural);
+                FamilyInstance fi = _doc.Create.NewFamilyInstance(connector.LocalPoint, fSymbol1, Autodesk.Revit.DB.Structure.StructuralType.NonStructural);
+                ts2.Commit();
                 //获取连接件
                 List<RevitConnector> connectors = RevitOperator.GetRevitConnectors(_doc, fi.Id);
                 RevitConnector connector2 = connectors == null ? null : connectors[0];
-                _doc.Create.NewElbowFitting(connector.Connector, connector2.Connector);
+                ts2.Start();
+                if (connector2 != null)
+                {
+                    LocationPoint lp = fi.Location as LocationPoint;
+                    XYZ p2 = lp.Point.Subtract(connector2.LocalPoint);
+                    ElementTransformUtils.MoveElement(_doc, fi.Id, p2);
+                }
                 ts2.Commit();
             }
             catch (Exception ex)

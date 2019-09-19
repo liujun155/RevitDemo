@@ -75,4 +75,3 @@ E:\Revit二次开发\RevitDemo\RevitDemo\obj\Debug\RevitDemo.csproj.CoreCompileI
 E:\Revit二次开发\RevitDemo\RevitDemo\obj\Debug\RevitDemo.csproj.CopyComplete
 E:\Revit二次开发\RevitDemo\RevitDemo\obj\Debug\RevitDemo.dll
 E:\Revit二次开发\RevitDemo\RevitDemo\obj\Debug\RevitDemo.pdb
-E:\Revit二次开发\RevitDemo\RevitDemo\obj\Debug\RevitDemo.csprojAssemblyReference.cache

@@ -100,6 +100,7 @@
     <Compile Include="Command\CmdDoor.cs" />
     <Compile Include="Command\CmdFamily.cs" />
     <Compile Include="Command\CmdRoom.cs" />
+    <Compile Include="Command\CmdSelected.cs" />
     <Compile Include="Common\AUnit.cs" />
     <Compile Include="Common\RevitConnector.cs" />
     <Compile Include="Common\RevitOperator.cs" />

@@ -15,6 +15,7 @@ namespace RevitDemo.ViewModel
         public RevitCommand LoadRoom { get; set; }
         public RevitCommand Door { get; set; }
         public RevitCommand Connector { get; set; }
+        public RevitCommand GetSelection { get; set; }
 
         public MainViewModel()
         {
@@ -22,6 +23,7 @@ namespace RevitDemo.ViewModel
             LoadRoom = new CmdRoom();
             Door = new CmdDoor();
             Connector = new CmdConnector();
+            GetSelection = new CmdSelected();
         }
     }
 }

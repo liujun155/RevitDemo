@@ -49,6 +49,15 @@
                                 <BitmapImage UriSource="C:\Users\liujun.SEENSUN\Pictures\连接.png"></BitmapImage>
                             </aw:RibbonButton.LargeImage>
                         </aw:RibbonButton>
+                        <aw:RibbonButton Text="获取选中" ShowText="True" MinWidth="80" Size="Large"  Orientation="Vertical"
+                                         CommandHandlerBinding="{Binding GetSelection}" ToolTip="获取选中">
+                            <aw:RibbonButton.Image>
+                                <BitmapImage UriSource="C:\Users\liujun.SEENSUN\Pictures\选中.png"></BitmapImage>
+                            </aw:RibbonButton.Image>
+                            <aw:RibbonButton.LargeImage>
+                                <BitmapImage UriSource="C:\Users\liujun.SEENSUN\Pictures\选中.png"></BitmapImage>
+                            </aw:RibbonButton.LargeImage>
+                        </aw:RibbonButton>
                     </aw:RibbonPanelSource>
                 </aw:RibbonPanel>
             </aw:RibbonTab>

@@ -30,6 +30,8 @@ namespace RevitDemo.Command
         {
             _app = data.Application;
             _doc = data.Application.ActiveUIDocument.Document;
+            Transaction ts = new Transaction(_doc, "CreateDoor");
+            ts.Start();
             try
             {
                 Reference refer = _app.ActiveUIDocument.Selection.PickObject(ObjectType.Element, "请选择墙");
@@ -61,10 +63,12 @@ namespace RevitDemo.Command
                 if (!familySymbol.IsActive)
                     familySymbol.Activate();
                 _doc.Create.NewFamilyInstance(midPoint, familySymbol, elem, wallLevel, Autodesk.Revit.DB.Structure.StructuralType.NonStructural);
+                ts.Commit();
                 TaskDialog.Show("提示", "创建成功");
             }
             catch (Exception ex)
             {
+                ts.RollBack();
                 TaskDialog.Show("提示", ex.Message);
             }
 
